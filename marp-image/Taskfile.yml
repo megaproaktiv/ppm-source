@@ -1,0 +1,23 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  OUT: marp-image.png
+  DIST: ~/PPM/img
+  OPT: "--allow-local-files --images png"
+
+tasks:
+#begin build
+  build:
+    cmds:
+      - marp {{.OPT}} marp-image.md -o {{.OUT}}
+    silent: true
+#end build
+
+  default:
+    desc: copy to course slides
+    deps:
+      - build
+    cmds:
+      - cp *.png {{.DIST}}/

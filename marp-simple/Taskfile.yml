@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  OUT: marp-simple.png
+  DIST: ~/PPM/img
+
+tasks:
+#begin build
+  build:
+    cmds:
+      - marp marp-simple.md -o marp-simple.png
+    silent: true
+#end build
+
+  default:
+    desc: copy to course slides
+    deps:
+      - build
+    cmds:
+      - cp {{.OUT}} {{.DIST}}/{{.OUT}}
