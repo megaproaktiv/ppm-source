@@ -3,14 +3,15 @@
 version: '3'
 
 vars:
-  OUT: code.png
+  OUT: lists.png
   DIST: ~/PPM/img
+  OPT: "--allow-local-files --images png"
 
 tasks:
 #begin build
   build:
     cmds:
-      - marp code.md -o {{.OUT}}
+      - marp {{.OPT}} lists.md -o {{.OUT}}
     silent: true
 #end build
 
@@ -19,4 +20,4 @@ tasks:
     deps:
       - build
     cmds:
-      - cp {{.OUT}} {{.DIST}}/{{.OUT}}
+      - cp *.png {{.DIST}}/
