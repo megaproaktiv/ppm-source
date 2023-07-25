@@ -2,9 +2,11 @@
 
 version: '3'
 
+#begin vars
 vars:
   OUT: marp-simple.png
   DIST: ~/PPM/img
+#end vars
 
 tasks:
 #begin build
@@ -14,13 +16,14 @@ tasks:
     silent: true
 #end build
 
+#begin default
   default:
     desc: copy to course slides
     deps:
       - build
     cmds:
       - cp {{.OUT}} {{.DIST}}/{{.OUT}}
-
+#end default
 
   pandoc:
     desc: Use pandoc
