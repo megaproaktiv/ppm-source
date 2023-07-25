@@ -20,3 +20,14 @@ tasks:
       - build
     cmds:
       - cp {{.OUT}} {{.DIST}}/{{.OUT}}
+
+
+  pandoc:
+    desc: Use pandoc
+    cmds:
+      - pandoc marp-simple.md -o marp-simple-pandoc.pptx
+
+  marp:
+    desc: Use marp for powerpoint
+    cmds:
+      - marp marp-simple.md -o marp-simple-marp.pptx

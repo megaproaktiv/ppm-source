@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 <!-- #begin -->
 # Headline
 
@@ -6,3 +10,9 @@
 - First line
 - Second line
 <!-- #end -->
+
+---
+
+# Second slide
+
+<!-- Presenter notes -->
