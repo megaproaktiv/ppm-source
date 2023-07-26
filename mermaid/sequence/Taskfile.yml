@@ -1,0 +1,33 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  OUT: sequence.pptx
+  DIST: ~/PPM/img
+  OPT: "--allow-local-files "
+
+tasks:
+#begin install
+  install:
+    desc: install mermaid-cli
+    cmds:
+      - npm install -g @mermaid-js/mermaid-cli
+    silent: true
+#end install
+
+#begin mermaid
+  mermaid:
+    desc: Render mermaid
+    cmds:
+      - mmdc -i simple-sequence.mmd -o simple-sequence.svg
+#end mermaid
+
+#begin render
+  render:
+    desc: render PowerPoint
+    deps:
+      - mermaid
+    cmds:
+      - marp {{.OPT}} mermaid.md -o {{.OUT}}
+#end render      
