@@ -28,8 +28,14 @@ other text
 ![bg ](img/bee.jpeg)
 <!-- #end background-->
 
-# right image
+# Right side image
 
 <!-- #begin side-->
 ![bg right ](img/bee.jpeg)
 <!-- #end side-->
+
+# Left side image
+
+<!-- #begin left-->
+![bg left ](img/bee.jpeg)
+<!-- #end left-->

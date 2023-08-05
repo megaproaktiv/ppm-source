@@ -92,6 +92,7 @@ export const main = async () => {
   }
 };
 ```
+<!-- # begin -->
 
 # Python :snake:
 Here is your first python code:

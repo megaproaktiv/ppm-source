@@ -1,0 +1,17 @@
+user: {
+    shape: person
+
+}
+
+note: {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F263-notepad.svg
+}
+
+archive {
+    shape: image
+    icon: https://icons.terrastruct.com/essentials%2F304-archive.svg
+}
+
+user -> note: edit
+note -> archive: archive

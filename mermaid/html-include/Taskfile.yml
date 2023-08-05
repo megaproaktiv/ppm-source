@@ -2,21 +2,20 @@
 
 version: '3'
 
-vars:
-  OUT: code.png
+vars:  
   DIST: ~/PPM/img
 
+
 tasks:
-#begin build
   build:
+    desc: Output png
     cmds:
-      - marp --images png code.md
+      - marp mermaid.md --html -o mermaid.png
     silent: true
-#end build
 
   default:
     desc: copy to course slides
     deps:
       - build
     cmds:
-      - cp *.png {{.DIST}}/
+      - cp mermaid.png {{.DIST}}/mermaid.png
