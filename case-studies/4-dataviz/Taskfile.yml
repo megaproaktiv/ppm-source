@@ -1,0 +1,25 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  IMAGE: ggplot2
+  THEME: dataviz
+  SOURCE: 
+tasks:
+  build:
+    desc: Build docker image
+    cmds:
+      - docker build -t {{.IMAGE}} .
+    silent: true
+
+  run:
+    desc: Run docker
+    cmds:
+      - docker run -v app:/app {{.IMAGE}}
+
+  render:
+    desc: Create Slides
+    cmds:
+      - marp --theme ${THEME} ${SOURCE} -o ${TARGET} --allow-local-files --html true --image-scale 1.5
+
